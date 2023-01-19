@@ -3,7 +3,9 @@ const columnPrimary = document.querySelector('.column-primary')
 const columnSecondary = document.querySelector('.column-secondary')
 const columnTertiary = document.querySelector('.column-tertiary')
 const columnCursors = document.querySelector('.column-cursors')
+const toast = document.querySelector('.toast')
 
+// typesButtons
 const buttonsFunctions = {
     defaultButton(e, type, classification, btn){
         btn.classList.add('btn',`${type}`,`${classification}`)
@@ -45,7 +47,20 @@ const buttonsFunctions = {
     }
 }
 
+const typeToasts = {
+    doneToast: {
+        img: './img/done-toast.svg',
+        message: 'Tudo Certo!'
 
+    },
+    errorToast: {
+        img: './img/error-toast.svg',
+        message: 'Ops! Parece que você já selecionou esse botão.'
+    }
+}
+
+
+// Functions
 function activeButton(e){
     const clicked = e.target.classList.contains('btn') || e.target.parentElement.classList.contains('btn')
     if(!clicked){
@@ -53,21 +68,35 @@ function activeButton(e){
     }
 
     if(e.target.classList[2]){
-    const buttonSelected = e.target.classList[2] + 'Button'
+    const classificationButtonSelected = e.target.classList[2]
     const typeButtonSelected = e.target.classList[1]
-    const button = testButtons.find((el) => el.classList.contains(typeButtonSelected))
-    button.classList = ''
-    button.textContent = 'INTERAJA COMIGO'
-    button.style.cursor = 'pointer'
-    buttonsFunctions[buttonSelected](e, typeButtonSelected, e.target.classList[2], button)
+    const buttonSelected = testButtons.find((el) => el.classList.contains(typeButtonSelected))
+    showToast(e, classificationButtonSelected, buttonSelected)
+
+    buttonSelected.classList = ''
+    buttonSelected.textContent = 'INTERAJA COMIGO'
+    buttonSelected.style.cursor = 'pointer'
+
+    buttonsFunctions[classificationButtonSelected + 'Button'](e, typeButtonSelected, classificationButtonSelected, buttonSelected)
     return
    }
-
     buttonsFunctions.cursorButton(e)
+    showToast(e)
+    return
 }
 
-// thinking in refactoring function ActiveButton
+function showToast(e, classification, button){
+    const typeToast = e.target.classList.contains(classification) && button.classList.contains(classification) ? 'errorToast' : 'doneToast' 
 
+    toast.innerHTML = `<img src='${typeToasts[typeToast].img}'><p>${typeToasts[typeToast].message}</p>`
+
+    toast.classList.add('show')
+
+    setTimeout(() => toast.classList.remove('show'), 3000)
+
+}
+
+// Events
 columnPrimary.addEventListener('click', activeButton)
 columnSecondary.addEventListener('click', activeButton)
 columnTertiary.addEventListener('click', activeButton)

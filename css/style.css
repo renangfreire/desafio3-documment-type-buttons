@@ -97,9 +97,20 @@ body {
 }
 
 /* FOCUS */
-.btn-primary.focus, 
-.btn-secondary.focus, 
-.btn-tertiary.focus{
+
+.focus{
+    transition: .1s;
+}
+
+.btn-primary.focus:focus, 
+.btn-secondary.focus:focus, 
+.btn-tertiary.focus:focus{
+    border: .2rem solid var(--btn-focus-color)
+}
+
+.column .btn-primary.focus, 
+.column .btn-secondary.focus, 
+.column .btn-tertiary.focus{
     border: .2rem solid var(--btn-focus-color)
 }
 
@@ -249,8 +260,48 @@ aside .buttons{
     align-items: center;
 }
 
+/* TOAST */
+.toast{
+    visibility: hidden;
+    opacity: 0;
 
-// KEYFRAMES
+    min-width: 25rem;
+    margin-left: -12.5rem;
+    padding: 1.6rem;
+
+    background-color: var(--btn-secondary);
+    color: white;
+    
+    border-radius: 2px;
+
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: -40px;
+
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+}
+
+.toast.show{
+    visibility: visible;
+    opacity: 1;
+    top: 60px;
+    -webkit-animation: fadein 0.5s, fadeout .5s 2.5s;
+    animation: fadein 0.5s, fadeout .5s 2.5s;
+}
+
+.toast p {
+    font-size: 1.4rem
+}
+
+.toast img {
+    color: white;
+}
+
+
+/* KEYFRAMES */
 
 @keyframes spin {
     to{
@@ -262,5 +313,20 @@ aside .buttons{
     to {
       -webkit-transform: rotate(360deg);
     }
-
 }
+
+@keyframes fadein{
+    from{
+        top: -40px; opacity: 0;
+    }
+    to{
+        top: 60px; opacity: 1;
+    }
+}
+
+@keyframes fadeout{
+    to{
+        top: -40px; opacity: 0;
+    }
+}
+
