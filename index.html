@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bora Codar Dev #3 - Tipos de botão</title>
+
+    <!-- LINKS -->
+    <!-- STYLE LINKS -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- FONT LINKS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=Roboto&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <main>
+        <div class="types-info ">
+            <h1 class="title-class">Tipos de botão</h1>
+            <p class="paragraph-class">Dentro de layout, botões servem para destacar ações importantes a serem tomadas. <br> Acompanhe abaixo um exemplo de tipos e propriedades.</p>
+        </div>
+        <div class="buttons-types">
+            <div class="table">
+                <div class="wrapper-top">
+                    <div class="box hd"></div>
+                    <div class="box hd"><span>Botão Primário</span></div>
+                    <div class="box hd"><span>Botão Secundário</span></div>
+                    <div class="box hd"><span>Botão Terciário</span></div>
+                    <div class="box hd"><span>Cursor</span></div>
+                </div>
+                <div class="wrapper-left">
+                    <div class="box hd">Default</div>
+                    <div class="box hd">Hover</div>
+                    <div class="box hd">Focus</div>
+                    <div class="box hd">Disabled</div>
+                    <div class="box hd">Loading</div>
+                    <div class="box hd">Movable</div>
+                </div>
+                <div class="table-content">
+                    <div class="column column-primary">         
+                        <div class="box bd"><button class="btn btn-primary default">Default Primary</button></div>
+                        <div class="box bd"><button class="btn btn-primary hover">Hover Primary</button></div>
+                        <div class="box bd"><button class="btn btn-primary focus">Focus Primary</button></div>
+                        <div class="box bd"><button class="btn btn-primary disabled">Disabled Primary</button></div>
+                        <div class="box bd"><button class="btn btn-primary loading"><div class="loading-spin"></div> Loading Primary</button></div>
+                        <div class="box bd"><button class="btn btn-primary movable"><img src="./img/movable-vector.svg"/>Movable Primary</button></div>
+                    </div>
+                    <div class="column column-secondary">
+                        <div class="box bd"><button class="btn btn-secondary default">Default Secondary</button></div>
+                        <div class="box bd "><button class="btn btn-secondary hover">Hover Secondary</button></div>
+                        <div class="box bd"><button class="btn btn-secondary focus">Focus Secondary</button></div>
+                        <div class="box bd"><button class="btn btn-secondary disabled">Disabled Secondary</button></div>
+                        <div class="box bd"><button class="btn btn-secondary loading"><div class="loading-spin"></div>Loading Secondary</button></div>
+                        <div class="box bd"><button class="btn btn-secondary movable"><img src="./img/movable-vector.svg"/>Movable Secondary</button></div>
+                    </div>
+                    <div class="column column-tertiary">
+                        <div class="box bd"><button class="btn btn-tertiary default">Default Tertiary</button></div>
+                        <div class="box bd"><button class="btn btn-tertiary hover">Hover Tertiary</button></div>
+                        <div class="box bd"><button class="btn btn-tertiary focus">Focus Tertiary</button></div>
+                        <div class="box bd"><button class="btn btn-tertiary disabled">Disabled Tertiary</button></div>
+                        <div class="box bd"><button class="btn btn-tertiary loading"><div class="loading-spin"></div>Loading Tertiary</button></div>
+                        <div class="box bd"><button class="btn btn-tertiary movable"><img src="./img/movable-vector.svg"/>Movable Tertiary</button></div>
+                    </div>
+                    <div class="column column-cursors">
+                        <div class="box bd"><button class="btn"><img src="./img/cursors/default-cursor.svg" alt=""></button></div>
+                        <div class="box bd"><button class="btn"><img src="./img/cursors/hover-cursor.svg" alt=""></button></div>
+                        <div class="box bd"><button class="btn"><img src="./img/cursors/focus-cursor.svg" alt=""></button></div>
+                        <div class="box bd"><button class="btn"><img src="./img/cursors/notallowed-cursor.svg" alt=""></button></div>
+                        <div class="box bd"><button class="btn"><img src="./img/cursors/loading-cursor.svg" alt=""></button></div>
+                        <div class="box bd"><button class="btn"><img src="./img/cursors/movable-cursor.svg" alt=""></button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <aside>
+            <div class="test-info">
+                <h2 class="title-class">Teste os botões</h2>
+                <p class='paragraph-class'>Interaja com os botões e observe a <br> mudança de aparência e de cursores.</p>
+            </div>
+            <div class="buttons">
+                <div><button class='btn btn-primary'>INTERAJA COMIGO</button></div>
+                <div><button class='btn btn-secondary'>INTERAJA COMIGO</button></div>
+                <div><button class='btn btn-tertiary'>INTERAJA COMIGO</button></div>
+            </div>
+    </aside>
+</body>
+<script src="./js/script.js"></script>
+</html>
